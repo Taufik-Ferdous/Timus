@@ -1,0 +1,51 @@
+/**
+ *    Author: lulu (Tasmir_)
+ *    Created: 24-February-2024  23:42:29
+**/
+#include<bits/stdc++.h>
+using namespace std;
+
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
+#define ll long long
+
+//====================================
+
+void solve(){
+    char c;
+    ll n; cin>>c >>n;
+    ll ans=0;
+    if(c+2<='h'){
+        if(n+1<=8) ++ans;
+        if(n-1>=1) ++ans;
+    }
+    if(c-2>='a'){
+        if(n+1<=8) ++ans;
+        if(n-1>=1) ++ans;
+    }
+    if(n+2<=8){
+        if(c+1<='h') ++ans;
+        if(c-1>='a') ++ans;
+    }
+    if(n-2>=1){
+        if(c+1<='h') ++ans;
+        if(c-1>='a') ++ans;
+    }
+    cout<<ans <<'\n';
+}
+
+
+int main(){
+
+#ifndef ONLINE_JUDGE
+    freopen("in.txt", "r", stdin);
+    freopen("out.txt", "w", stdout);
+#endif
+
+    optimize();
+
+    ll t=1;
+    cin>>t;
+    while(t--)
+        solve();
+}
