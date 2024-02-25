@@ -1,0 +1,49 @@
+/**
+ *    Author: lulu (Tasmir_)
+ *    Created: 25-February-2024  19:45:12
+**/
+#include<bits/stdc++.h>
+using namespace std;
+
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
+#define ll long long
+
+//====================================
+
+void solve(){
+    ll n; cin>>n;
+    ll v[n][n];
+    ll inc=1;
+    for(ll i=n-1; i>=0; --i){
+        ll temp = i;
+        ll j=0;
+        while(temp<n) v[j++][temp++] = inc++;
+    }
+    for(ll i=1; i<n; ++i){
+        ll temp = i;
+        ll j=0;
+        while(temp<n) v[temp++][j++] = inc++;
+    }
+
+    for(ll i=0; i<n; ++i){
+        for(ll j=0; j<n; ++j) cout<<v[i][j] <<' ';
+        cout<<'\n';
+    }
+}
+
+
+int main(){
+
+#ifndef ONLINE_JUDGE
+    freopen("in.txt", "r", stdin);
+    freopen("out.txt", "w", stdout);
+#endif
+
+    optimize();
+
+    ll t=1;
+    // cin>>t;
+    while(t--)
+        solve();
+}
